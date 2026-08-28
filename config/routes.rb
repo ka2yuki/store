@@ -13,6 +13,22 @@ Rails.application.routes.draw do
   end
   resource :unsubscribe, only: [ :show ]
 
+  resource :session
+  resources :passwords, param: :token
+  resource :sign_up
+
+  namespace :settings do
+    resource :email, only: [ :show, :update ]
+    resource :password, only: [ :show, :update ]
+    resource :profile, only: [ :show, :update ]
+    resource :user, only: [ :show, :destroy ]
+
+    root to: redirect("/settings/profile") 
+  end
+
+  namespace :email do
+    resources :confirmations, param: :token, only: [ :show ]
+  end  
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest

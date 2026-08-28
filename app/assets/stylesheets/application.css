@@ -13,7 +13,7 @@ body {
   padding: 1rem;
 }
 
-nav {
+/* nav {
   justify-content: flex-end;
   display: flex;
   font-size: 0.875em;
@@ -24,6 +24,20 @@ nav {
 }
 
 nav a {
+  display: inline-block;
+} */
+
+nav.navbar {
+  justify-content: flex-end;
+  display: flex;
+  font-size: 0.875em;
+  gap: 0.5rem;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+nav.navbar a {
   display: inline-block;
 }
 
@@ -51,4 +65,17 @@ section.product img {
   border-radius: 8px;
   flex-basis: 50%;
   max-width: 50%;
+}
+
+section.settings {
+  display: flex;
+  gap: 1rem;
+}
+
+section.settings nav {
+  width: 200px;
+}
+
+section.settings nav a {
+  display: block;
 }
